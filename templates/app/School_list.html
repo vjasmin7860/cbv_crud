@@ -1,16 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <center>
+{% extends 'app/dummy.html' %}
+{% block title %}
+ <title>School_list</title>
+{% endblock %}
+
+    {%  block body_block %}
+      <center>
         <h1>School_list</h1>
         {% for i in schools %}
-        <a href="{{i.pk}}"><h2>{{i.scname}}</h2></a>
+            <a href="{{i.pk}}"><h2>{{i.scname}}</h2></a>
         {% endfor %}
-    </center>
-</body>
-</html>
+
+      </center>
+{% endblock %}

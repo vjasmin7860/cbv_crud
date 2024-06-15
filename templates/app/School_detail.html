@@ -1,11 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+{% extends 'app/dummy.html' %}
+
+{% block title %}
+<title>SCHOOL DETAILS</title>
+{% endblock %}
+
+{%  block body_block %}
+    
+    
     <center>
         <h1>school details</h1>
         <h2>details information is</h2>
@@ -15,13 +16,14 @@
 
 
         <h1>detail information of students</h1>
-        {% for i in schoolobject.students.all %}
-        <h2>name of the student is{{i.stname}}</h2>
-        <h2>age of the student is {{i.stage}}</h2>
-        {% endfor %}
 
+
+        {% for i in schoolobject.students.all %}
+            <h2>name of the student is{{i.stname}}</h2>
+            <h2>age of the student is {{i.stage}}</h2>
+        {% endfor %}
+          <a href="{% url 'SchoolUpdate' pk=schoolobject.pk %}" class="btn btn-danger"> schoolupdate</a>
 
     </center>
+{% endblock %}
     
-</body>
-</html>
